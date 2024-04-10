@@ -1,0 +1,44 @@
+{
+  "sections": {
+    "lookbook_dgTCqR": {
+      "type": "Lookbook",
+      "blocks": {
+        "product_cpMKjj": {
+          "type": "product",
+          "settings": {
+            "product": "amalee"
+          }
+        },
+        "product_WFRPRc": {
+          "type": "product",
+          "settings": {
+            "product": "jen-mini-fringe"
+          }
+        },
+        "product_7Wckcz": {
+          "type": "product",
+          "settings": {
+            "product": "lanai"
+          }
+        }
+      },
+      "block_order": [
+        "product_cpMKjj",
+        "product_WFRPRc",
+        "product_7Wckcz"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/lookbook_pf22_02.webp",
+        "description": "<p>Our latest collection demonstrates an elegant eccentricity – bold patterns inspired by traditional nomadic dressing, embroidered buttons, ceramic detailing and artisanal stitching contrast with stark, clean-lined silhouettes that showcase refined modernity.<\/p>",
+        "button_label": "Shop the look",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0
+      }
+    }
+  },
+  "order": [
+    "lookbook_dgTCqR"
+  ]
+}

@@ -1,0 +1,51 @@
+<div class="lookbook__product" data-product-id="{{product.id}}">
+  {%- assign currentVariant = '' -%}
+  {%- if product.selected_variant.id != null -%}
+    {%- assign currentVariant = product.selected_variant -%}
+  {%- else -%}
+    {%- assign currentVariant = product.first_available_variant -%}
+  {%- endif -%}
+  
+  <div class="product__image">
+    {%- unless product.featured_image == blank -%}
+      {{product.featured_image | image_url: width: 700 | image_tag: loading: "lazy"}}
+    {%- endunless -%}
+  </div>
+  <div class="product__info">
+    <div class="product__info-top">
+      <p class="product__title">{{product.title}}</p>
+      <div class="product__price">
+        <span class="product__price--sale">{{currentVariant.price | money}}</span>
+        <span class="product__price--compare">{{currentVariant.compare_at_price | money}}</span>
+      </div>
+    </div>
+    {%- unless product.description == blank -%}
+      <div class="product__description">
+        {{product.description}}
+      </div>
+    {%- endunless -%}
+    
+    <div class="product__form-wrapper">
+      {%- assign product_form_id = 'product-form-' | append: block.id -%}
+      {%- if product.has_only_default_variant -%}
+        <span class="product__variant-label">{{'products.product.one_variant' | t}}</span>
+      {%- else -%}
+        {% render 'product-variant-picker', product: product, product_form_id: product_form_id %}
+      {%- endif -%}
+      {% if currentVariant.available %}
+        {%- form 'product',
+          product,
+          id: product.id,
+          class: 'product__form',
+          novalidate: 'novalidate',
+          data-type: 'add-to-cart-form'
+        -%}
+          <input type="hidden" name="id" value="{{currentVariant.id}}">
+          <input min="1" name="quantity" type="hidden" value="1">
+          <button class="product__button-buy" type="button">{{ 'products.product.add_to_cart' | t }}</button>
+        {% endform %}
+      {% endif %}
+      
+    </div>
+  </div>
+</div>

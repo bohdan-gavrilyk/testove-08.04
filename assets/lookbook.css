@@ -1,0 +1,242 @@
+.lookbook__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.lookbook__media-item,
+.lookbook__description {
+  flex-grow: 1;
+  flex-shrink: 0;
+  width: calc(50% - 5px);
+  max-width: 100%;
+}
+.lookbook__description {
+  display: flex;
+  justify-content: center;
+}
+.lookbook__description p {
+  max-width: 550px;
+  text-align: center;
+  margin: 0;
+}
+.lookbook__media-item {
+  position: relative;
+  min-height: 100%;
+}
+.lookbook__media-item .product-popup-modal__opener {
+  display: flex;
+  justify-content: center;
+}
+.lookbook__media {
+  position: relative;
+}
+.lookbook__media img {
+  display: block;
+  max-width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+.lookbook__modal {
+  display: flex;
+  gap: 25px;
+  height: 100%;
+}
+.lookbook__modal-image {
+  max-width: calc(50% - 10px);
+  width: 100%;
+  margin: 0 auto;
+}
+.lookbook__modal-image  img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.lookbook__products {
+  flex-grow: 1;
+  width: calc(50% - 10px);
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.lookbook__product {
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.product__image {
+  position: relative;
+  width: calc(45% - 10px);
+  padding-bottom: 45%;
+}
+.product__image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.product__info-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.product__info {
+  display: flex;
+  flex-direction: column;
+  width: calc(55% - 10px);
+}
+.product__title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+}
+.product__price {
+  display: flex;
+  flex-direction: column;
+}
+.product__price--sale {
+  color: red;
+}
+.product__price--compare {
+  text-decoration: line-through;
+}
+.product__price--sale,
+.product__price--compare {
+  display: block;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 600;
+
+}
+.product__form-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 10px;
+  flex-grow: 1;
+}
+.product__variant-label {
+  text-align: center;
+}
+.product__form-wrapper .product-form__input {
+  max-width: 7rem;
+  margin: 0;
+}
+.lookbook__product .product__form-wrapper .form__label{
+  display: none;
+}
+
+.lookbook__modal-content .product-popup-modal__content-info {
+  padding: 45px;
+}
+.lookbook__modal-content .select:after {
+  box-shadow: none;
+  outline: none;
+  border: none
+}
+.product__form {
+  width: 100%;
+  max-width: 320px;
+}
+.product__button-buy {
+  cursor: pointer;
+  width: 100%;
+  height: 45px;
+  background-color: transparent;
+}
+.lookbook__modal-content.product-popup-modal__content {
+  padding: 0;
+}
+@media(max-width: 992px) {
+  .lookbook__modal {
+    flex-wrap: wrap;
+  }
+}
+@media(max-width: 768px) {
+  .lookbook__wrapper {
+    flex-wrap: wrap;
+  }
+  .lookbook__media-item, .lookbook__description {
+    width: 100%;
+  }
+  .lookbook__description p,
+  .lookbook__media-item .product-popup-modal__butto
+  {
+    font-size: 14px;
+  }
+  .lookbook__description p {
+    padding: 0 15px;
+
+  }
+  .lookbook__modal-content .product-popup-modal__content-info {
+    padding: 15px;
+  }
+  .lookbook__modal-image {
+    max-width: none;
+  }
+  .product__title {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  .product__price--sale, .product__price--compare,.product__variant-label {
+    font-size: 14px;
+    line-height: 16px;
+  }
+  .product__description p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 16px;
+    padding-top: 10px;
+  }
+  .product__button-buy,
+  .product__form-wrapper .select__select {
+    height: 30px;
+    font-size: 14px;
+    line-height: 30px;
+    padding: 0;
+  }
+  .product__form-wrapper .icon.icon-caret {
+    right: unset;
+    left: 30px;
+  }
+}
+@media(max-width: 476px) {
+  .product__description p {
+    font-size: 12px;
+    line-height: 14px;
+  }
+  .product__title { 
+    font-size: 14px;
+    line-height: 16px;
+  }
+  .product__button-buy,
+  .product__form-wrapper .select__select, 
+  .product__variant-label{
+    font-size: 12px;
+    margin: 0;
+  }
+  .product__image {
+    width: calc(40% - 5px);
+    padding-bottom: 40%;
+  }
+  .product__info {
+    width: calc(60% - 5px);
+  }
+  .lookbook__modal-image {
+    max-height: 320px;
+  }
+}
+@media(min-width: 750px) {
+  .lookbook__modal-content.product-popup-modal__content {
+    width: 85%;
+  }
+}
